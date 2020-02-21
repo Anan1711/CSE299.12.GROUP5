@@ -16,16 +16,19 @@ public class PlayerMovement : MonoBehaviour
 	bool crouch = false;
 
 	// Update is called once per frame
-	void Update()
+	void Update() //get input from the player
 	{
+		// horizontal value 1, when goes right, value -1 when goes left
 
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed; // GetAxis - where to move the player 
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove)); //Mathf.Abs = so when we go right it will be positive, and when we go left it will show again positive
 
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
+			// for transitioning jumping animation
+
 			animator.SetBool("IsJumping", true);
 		}
 
@@ -49,10 +52,10 @@ public class PlayerMovement : MonoBehaviour
 		animator.SetBool("IsCrouching", isCrouching);
     }
 
-	void FixedUpdate()
+	void FixedUpdate() // apply that input in the character
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-		jump = false;
+		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump); //Time.fixedDeltaTime -- makes character speed consistent , elapsed timewhen it was last called
+		jump = false; // stop jumping
 	}
 }
