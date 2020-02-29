@@ -15,14 +15,14 @@ public class playerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool Jump = false;
     bool crouch = false;
-    
+
     // This function gets input from the player.
     // Update is called once per frame.
     void Update()
     {
         // GetAxisRaw function is for getting input from the player to where to move.
         // horizontalMove can be 1 for going right or -1 for going left.
-        horizontalMove = Input.GetAxisRaw("Horizontal")* runSpeed;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         // Function for transitioning from idle to running animation.
         // Mathf.Abs takes the absolute value of the horizontalMove so that value is always positive.
@@ -43,11 +43,15 @@ public class playerMovement : MonoBehaviour
         {
             crouch = true;
 
-        }else if (Input.GetButtonUp("Crouch"))
+        } else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
         
+
+
+
+
     }
 
     // functions can be public as well.
@@ -61,6 +65,8 @@ public class playerMovement : MonoBehaviour
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("IsCrouching", isCrouching);
+        
+        
     }
 
     // This function is called a fixed amount of time. Not like 'Update' method which is called once after the computer draws a frame.
@@ -68,7 +74,12 @@ public class playerMovement : MonoBehaviour
     {
         // Moves the character
         // Time.fixedDeltaTime is the time elapsed when this function was last called. Ensures we move the same amount no matter how often FixedUpdate is called.
-        controller.Move(horizontalMove * Time.fixedDeltaTime ,crouch,Jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, Jump);
+
+        
+
+        
+        
 
         // To stop jumping.
         Jump = false;

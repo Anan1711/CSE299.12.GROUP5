@@ -5,7 +5,9 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    
+
+    public Animator animator;
+
 
     // This variable will reference our target (player)
     public Transform target;
@@ -22,7 +24,7 @@ public class EnemyAI : MonoBehaviour
     public Transform enemyGFX;
     
 
-    // private variable. The path we are following
+    //  variable. The path we are following
     Path path;
     
 
@@ -57,11 +59,8 @@ public class EnemyAI : MonoBehaviour
         // 0f = amount of time we want to wait
         // .5f = repeat rate
         InvokeRepeating("UpdatePath", 0f, .5f);
+      }
 
-        
-    }
-
-    
     void UpdatePath()
     {
         // Checking if we are not calculation a path then we can start a new one
@@ -70,9 +69,7 @@ public class EnemyAI : MonoBehaviour
             // Generating the path. StartPath takes the start position which is the emeny and an end position which is our target.
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
-        
-
-    }
+      }
 
     // This function will run in the background. It will just calculate the path
     void OnPathComplete(Path p)
@@ -86,8 +83,7 @@ public class EnemyAI : MonoBehaviour
             // Resetting our progress along our path to start at the begining of our new path
             currentWaypoint = 0;
         }
-        
-    }
+      }
 
     // To move our enemy along the path
     // FixedUpdate is called a fixed number of time per frame. Ideal for working with physics
@@ -156,6 +152,8 @@ public class EnemyAI : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
+
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 
         
     }
