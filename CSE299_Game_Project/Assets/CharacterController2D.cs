@@ -19,6 +19,15 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+
+
+
+	//======================================================================================================================
+	// Extra Jumps
+	
+	//===========================================================================================================================
+
+
 	[Header("Events")]
 	[Space]
 
@@ -59,6 +68,11 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 	}
+
+	// *********************************************    Extra Jump    ****************************************************
+	//**************************************************************************************************************************
+	
+
 
 
 	public void Move(float move, bool crouch, bool jump)

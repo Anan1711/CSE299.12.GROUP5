@@ -24019,9 +24019,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000001904497, y: 0.09323552}
+  m_Offset: {x: 0.0000001904497, y: 0.062641114}
   serializedVersion: 2
-  m_Radius: 0.44736412
+  m_Radius: 0.4224354
 --- !u!58 &1551279198
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33806,7 +33806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120322883}
   m_Layer: 10
-  m_Name: Midground (1)
+  m_Name: EnemyGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
