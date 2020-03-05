@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
 
     public Animator animator;
+    public LayerMask enemyLayers;
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
+    
     public int attackDamage = 40;
 
     // Update is called once per frame
@@ -41,11 +42,7 @@ public class PlayerCombat : MonoBehaviour
         {
             animator.SetTrigger("Attack1");
 
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                enemy.GetComponent<enemy>().TakeDamage(attackDamage);
-            }
+           
         }
         else if (Input.GetButtonDown("Fire2"))
         {
@@ -62,6 +59,12 @@ public class PlayerCombat : MonoBehaviour
         else
         {
             animator.SetTrigger("UltraAtk");
+        }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
     void OnDrawGizmosSelected()
