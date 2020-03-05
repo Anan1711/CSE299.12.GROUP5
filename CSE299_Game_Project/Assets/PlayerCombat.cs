@@ -7,7 +7,18 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator;
 
-    // Update is called once per frame
+    // Referencing the AttackPoint Object under Knight.
+    public Transform AttackPoint;
+   
+    // Detect which is an enemy.
+    public LayerMask enemyLayers;
+
+    // Range of the attack
+    public float attackRange = 0.5f;
+
+     public int attackDamage = 40;
+
+    // Update is called once per frame.
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -26,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Attack()
     {
-        // Play an attack animation
+        // Play an attack animation.
         if(Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("Attack");
@@ -39,9 +50,31 @@ public class PlayerCombat : MonoBehaviour
         {
             animator.SetTrigger("CastAttack");
         }
-        
-        
-        // Detect enemy in range of attack
+
+
+        // Detect enemy in range of attack.
+        // Creats an object around the AttackPoint object to collect all obejct that this circle hits.
+        // hitEnemies an array of all enemy we hit.
+        Collider2D[] hitEnemies =  Physics2D.OverlapCircleAll(AttackPoint.position,attackRange,enemyLayers);
+       
+
         // Apply Damage
+        foreach (Collider2D enemy in hitEnemies)
+        {
+           
+            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+            
+        }
+
+        
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if(AttackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(AttackPoint.position, attackRange);
     }
 }

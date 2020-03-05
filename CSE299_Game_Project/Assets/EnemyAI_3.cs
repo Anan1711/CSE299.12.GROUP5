@@ -7,6 +7,12 @@ public class EnemyAI_3 : MonoBehaviour
 {
     public Animator animator;
 
+    // Max health of the enemy
+    public int MaxHealth = 200;
+
+    // Current health
+    int currentHealth;
+
 
     // This variable will reference our target (player)
     public Transform target;
@@ -46,6 +52,9 @@ public class EnemyAI_3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Assigning Max Health to current health.
+        currentHealth = MaxHealth;
+
         // Finding the seeker component on our object
         seeker3 = GetComponent<Seeker>();
 
@@ -156,4 +165,44 @@ public class EnemyAI_3 : MonoBehaviour
 
 
     }
+
+    // Function for taking damage
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        // play hurt animation
+        animator.SetTrigger("Hurt");
+
+        // if no health remains then enemy dies
+        if (currentHealth <= 0)
+        {
+            EnemyDeath();
+        }
+
+    }
+
+    void EnemyDeath()
+    {
+        // Die animation
+        animator.SetBool("IsDead", true);
+
+        // Disable the enemy
+        //GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        this.enabled = false;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
