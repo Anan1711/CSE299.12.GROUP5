@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 355151769}
   - component: {fileID: 355151770}
   - component: {fileID: 355151771}
+  - component: {fileID: 355151772}
   m_Layer: 11
   m_Name: EnemyGFX
   m_TagString: Untagged
@@ -358,6 +359,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &355151772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355151767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20f5a45e6948864bb691e3dfa69dd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 355151771}
+  MaxHealth: 200
 --- !u!1 &473129876
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,13 +676,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493610176}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b837000ca186e645bfb3e92e54d6402, type: 3}
+  m_Script: {fileID: 11500000, guid: 0634582f6fb88e64fa059f2cae0c3b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  maxHealth: 100
+  animator: {fileID: 1435307452}
+  MaxHealth: 100
 --- !u!1 &664444077
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +843,6 @@ GameObject:
   - component: {fileID: 1435307451}
   - component: {fileID: 1435307452}
   - component: {fileID: 1435307453}
-  - component: {fileID: 1435307454}
   m_Layer: 11
   m_Name: EnemyGFX
   m_TagString: Untagged
@@ -932,20 +946,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1435307452}
   aiPath: {fileID: 493610177}
---- !u!114 &1435307454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435307449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b837000ca186e645bfb3e92e54d6402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1435307452}
-  maxHealth: 100
 --- !u!1 &1439928488
 GameObject:
   m_ObjectHideFlags: 3
@@ -1077,7 +1077,6 @@ GameObject:
   - component: {fileID: 1641941250}
   - component: {fileID: 1641941251}
   - component: {fileID: 1641941252}
-  - component: {fileID: 1641941253}
   m_Layer: 11
   m_Name: Enemy2
   m_TagString: Untagged
@@ -1290,20 +1289,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1641941253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641941244}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b837000ca186e645bfb3e92e54d6402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  maxHealth: 100
 --- !u!1 &1692053559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1804,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1489284616}
   attackRange: 0.77
   attackDamage: 40
+  attackRate: 2
 --- !u!1 &2012279831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,10 +1991,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012279831}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b837000ca186e645bfb3e92e54d6402, type: 3}
+  m_Script: {fileID: 11500000, guid: 0634582f6fb88e64fa059f2cae0c3b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  maxHealth: 100
+  animator: {fileID: 1740884956}
+  MaxHealth: 100

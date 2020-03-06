@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Enemy : MonoBehaviour
+public class EnemyStats : MonoBehaviour
 {
 
-
+   
     public Animator animator;
     public int MaxHealth = 100;
     int currentHealth;
@@ -27,24 +27,20 @@ public class Enemy : MonoBehaviour
         // if no health remains then enemy dies
         if (currentHealth <= 0)
         {
-            Die();
+            EnemyDeath();
         }
-        
+
     }
 
-    void Die()
+    void EnemyDeath()
     {
-        Debug.Log("Enemy died");
         // Die animation
-        animator.SetBool("IsDead", true);
+        animator.SetBool("Isdead", true);
 
         // Disable the enemy
         //GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
-       // GetComponent<AIPath>().enabled = false;
-       // GetComponent<AIDestinationStter>().enabled = false;
         this.enabled = false;
-        
 
 
 
