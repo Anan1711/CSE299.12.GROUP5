@@ -9,14 +9,21 @@ public class PlayerCombat : MonoBehaviour
 
     // Referencing the AttackPoint Object under Knight.
     public Transform AttackPoint;
-   
+    
+
     // Detect which is an enemy.
     public LayerMask enemyLayers;
+    
+
 
     // Range of the attack
     public float attackRange = 0.5f;
+    
 
-     public int attackDamage = 40;
+    public int attackDamage = 40;
+
+   
+    
 
     // Update is called once per frame.
     void Update()
@@ -56,17 +63,50 @@ public class PlayerCombat : MonoBehaviour
         // Creats an object around the AttackPoint object to collect all obejct that this circle hits.
         // hitEnemies an array of all enemy we hit.
         Collider2D[] hitEnemies =  Physics2D.OverlapCircleAll(AttackPoint.position,attackRange,enemyLayers);
-       
+
+
+
+
 
         // Apply Damage
         foreach (Collider2D enemy in hitEnemies)
         {
-           
-            enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
-            
-        }
+            try
+            {
+                enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+               
+            }
+            catch
+            {
+                Debug.LogError("Something is wrong 1");
+            }
+            try
+            {
+                enemy.GetComponent<EnemyAI_2>().TakeDamage(attackDamage);
 
+            }
+            catch
+            {
+                Debug.LogError("Something is wrong 2");
+            }
+            try
+            {
+                enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                Debug.LogError("Something is wrong 3");
+            }
+            
+
+        }
         
+
+
+
+
+
     }
 
     void OnDrawGizmosSelected()

@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 780466745}
   - component: {fileID: 780466744}
   - component: {fileID: 780466743}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Enemy-1GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1470,7 +1470,7 @@ GameObject:
   - component: {fileID: 861186281}
   - component: {fileID: 861186280}
   - component: {fileID: 861186284}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Enemy-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1183549807}
-  MaxHealth: 200
+  MaxHealth: 100
   target: {fileID: 1241752264}
   speed3: 650
   nextwaypointDistance3: 3
@@ -1725,7 +1725,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24, y: -0.7}
+  m_Offset: {x: 0.24, y: -0.62}
   serializedVersion: 2
   m_Radius: 1.0522299
 --- !u!114 &904967159
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 780466743}
-  MaxHealth: 200
+  MaxHealth: 100
   target: {fileID: 1241752264}
   speed: 650
   nextwaypointDistance: 3
@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 975515217}
   - component: {fileID: 975515216}
   - component: {fileID: 975515215}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Enemy-2GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 1183549809}
   - component: {fileID: 1183549808}
   - component: {fileID: 1183549807}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Enemy-3GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,7 +2110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   AttackPoint: {fileID: 652092032}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 7168
   attackRange: 1.59
   attackDamage: 20
 --- !u!1 &1257672078
@@ -2301,7 +2301,7 @@ GameObject:
   - component: {fileID: 1257672082}
   - component: {fileID: 1257672084}
   - component: {fileID: 1257672085}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Enemy-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2316,7 +2316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257672078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.6, y: 2.57, z: 0}
+  m_LocalPosition: {x: 25.84, y: 1.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 975515217}
@@ -2336,7 +2336,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10687733, y: 1.5656127}
+  m_Offset: {x: -0.10687733, y: 1.457022}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2347,7 +2347,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3670979, y: 2.4887826}
+  m_Size: {x: 2.3670979, y: 2.1556735}
   m_EdgeRadius: 0
 --- !u!50 &1257672081
 Rigidbody2D:
@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 975515215}
-  MaxHealth: 200
+  MaxHealth: 100
   target: {fileID: 1241752264}
   speed2: 650
   nextwaypointDistance2: 3
@@ -2453,7 +2453,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2478,9 +2478,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04, y: 0.3}
+  m_Offset: {x: -0.09000003, y: 0.15489459}
   serializedVersion: 2
-  m_Radius: 1.2930102
+  m_Radius: 1.0562667
 --- !u!1 &1696705833
 GameObject:
   m_ObjectHideFlags: 0

@@ -188,8 +188,9 @@ public class EnemyAI_3 : MonoBehaviour
         animator.SetBool("IsDead", true);
 
         // Disable the enemy
-        //GetComponent<CircleCollider2D>().enabled = false;
+        
         GetComponent<BoxCollider2D>().enabled = false;
+        
         this.enabled = false;
 
     }

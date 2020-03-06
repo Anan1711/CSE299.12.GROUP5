@@ -170,6 +170,7 @@ public class EnemyAI_2 : MonoBehaviour
 
     }
 
+
     // Function for taking damage
     public void TakeDamage(int damage)
     {
@@ -192,7 +193,7 @@ public class EnemyAI_2 : MonoBehaviour
         animator.SetBool("IsDead", true);
 
         // Disable the enemy
-        //GetComponent<CircleCollider2D>().enabled = false;
+        
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
 
