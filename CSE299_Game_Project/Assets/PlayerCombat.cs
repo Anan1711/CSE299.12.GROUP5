@@ -78,7 +78,7 @@ public class PlayerCombat : MonoBehaviour
             }
             catch
             {
-                Debug.LogError("Something is wrong 1");
+               // Debug.LogError("Something is wrong 1");
             }
             try
             {
@@ -87,16 +87,16 @@ public class PlayerCombat : MonoBehaviour
             }
             catch
             {
-                Debug.LogError("Something is wrong 2");
+               // Debug.LogError("Something is wrong 2");
             }
             try
             {
                 enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
 
             }
-            catch
+            catch 
             {
-                Debug.LogError("Something is wrong 3");
+               // Debug.LogError("Something is wrong 3");
             }
             
 
