@@ -24,7 +24,10 @@ public class CharacterController2D : MonoBehaviour
 
 	//======================================================================================================================
 	// Extra Jumps
-	
+
+	//private int numofJumps = 0;
+	//private int maxJumps = 2;
+	//private bool extraJumps;
 	//===========================================================================================================================
 
 
@@ -69,9 +72,6 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-	// *********************************************    Extra Jump    ****************************************************
-	//**************************************************************************************************************************
-	
 
 
 
@@ -138,13 +138,79 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
-		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-		}
+
+		
+				if (m_Grounded && jump)
+				{
+					// Add a vertical force to the player.
+					m_Grounded = false;
+					m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				}
+
+
+
+		/*
+		
+		else
+				{
+					if (extraJumps)
+					{
+						// Add a vertical force to the player.
+						m_Grounded = true;
+						m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce)*2);
+						extraJumps = false;
+					}
+				}
+
+
+				*/
+
+
+
+		/*
+						if (m_Grounded)
+							numofJumps = 0;
+						if (m_Grounded || numofJumps < maxJumps)
+						{
+							if (!m_Grounded)
+								m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D, 0);
+							m_Rigidbody2D =  Vector2(0f, m_JumpForce);
+							numofJumps += 1;
+							m_Grounded = false;
+						} jump = false;
+
+				*/
+
+
+
+
 	}
+
+	// *********************************************    Extra Jump    ****************************************************
+	//**************************************************************************************************************************
+
+
+
+
+
+
+
+
+	/*
+void Update()
+		if(m_Grounded == true){
+	extraJumps = 2;
+ {
+	if(Input.GetKeyDown(KeyCode.UpArrow) && extraJumps > 0)
+   {
+		m_Rigidbody2D.velocity = m_Velocity.up * m_JumpForce;
+		extraJumps--;
+}
+ }
+*/
+
+
+
 
 
 	private void Flip()
@@ -153,8 +219,11 @@ public class CharacterController2D : MonoBehaviour
 		m_FacingRight = !m_FacingRight;
 
 		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		///Vector3 theScale = transform.localScale;
+		//theScale.x *= -1;
+		//transform.localScale = theScale;
+
+		transform.Rotate(0f, 180f, 0f);
+
 	}
 }
