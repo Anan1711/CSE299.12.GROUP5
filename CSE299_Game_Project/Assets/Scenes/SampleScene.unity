@@ -120,6 +120,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &37300070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 37300071}
+  m_Layer: 8
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &37300071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37300070}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.03, y: -0.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1241752264}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273711396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2077,7 @@ GameObject:
   - component: {fileID: 1241752267}
   - component: {fileID: 1241752269}
   - component: {fileID: 1241752270}
+  - component: {fileID: 1241752271}
   m_Layer: 8
   m_Name: Knight
   m_TagString: Untagged
@@ -2136,6 +2167,7 @@ Transform:
   - {fileID: 1748690992}
   - {fileID: 1696705834}
   - {fileID: 652092032}
+  - {fileID: 37300071}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2286,6 +2318,21 @@ MonoBehaviour:
     m_Bits: 7168
   attackRange: 1.59
   attackDamage: 20
+--- !u!114 &1241752271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241752261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0321144b015d7704dae39c2f33c56ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 37300071}
+  FireBallPreFab: {fileID: 211892253520379227, guid: 46cae497a52f4ce4fa79cf0e643e365d,
+    type: 3}
 --- !u!1 &1257672078
 GameObject:
   m_ObjectHideFlags: 0

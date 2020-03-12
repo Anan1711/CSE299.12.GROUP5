@@ -68,7 +68,8 @@ public class EnemyAI : MonoBehaviour
         // 0f = amount of time we want to wait
         // .5f = repeat rate
         InvokeRepeating("UpdatePath", 0f, .5f);
-      }
+        
+    }
 
     void UpdatePath()
     {
@@ -192,11 +193,13 @@ public class EnemyAI : MonoBehaviour
         
         GetComponent<BoxCollider2D>().enabled = false;
 
+        this.enabled = false;
+
        
 
-        this.enabled = false;
-    
     }
+
+    
 
 
 
