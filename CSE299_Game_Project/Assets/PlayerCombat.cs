@@ -20,7 +20,8 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     
 
-    public int attackDamage = 40;
+    public int attackDamage;
+    public int BigDamage;
 
    
     
@@ -73,7 +74,15 @@ public class PlayerCombat : MonoBehaviour
         {
             try
             {
-                enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+                if(Input.GetButtonDown("Fire1"))
+                {
+                    enemy.GetComponent<EnemyAI>().TakeDamage(attackDamage);
+                }
+                else if(Input.GetButtonDown("Fire2"))
+                {
+                    enemy.GetComponent<EnemyAI>().TakeDamage(BigDamage);
+                }
+              
                
             }
             catch
@@ -82,7 +91,15 @@ public class PlayerCombat : MonoBehaviour
             }
             try
             {
-                enemy.GetComponent<EnemyAI_2>().TakeDamage(attackDamage);
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    enemy.GetComponent<EnemyAI_2>().TakeDamage(attackDamage);
+                }
+                else if (Input.GetButtonDown("Fire2"))
+                {
+                    enemy.GetComponent<EnemyAI_2>().TakeDamage(BigDamage);
+                }
 
             }
             catch
@@ -91,7 +108,14 @@ public class PlayerCombat : MonoBehaviour
             }
             try
             {
-                enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
+                }
+                else if (Input.GetButtonDown("Fire2"))
+                {
+                    enemy.GetComponent<EnemyAI_3>().TakeDamage(BigDamage);
+                }
 
             }
             catch 

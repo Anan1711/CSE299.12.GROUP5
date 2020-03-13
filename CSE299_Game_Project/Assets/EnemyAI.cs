@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
 
     // Max health of the enemy
-    public int MaxHealth = 200;
+    public int MaxHealth = 100;
 
     // Current health
     int currentHealth;
@@ -192,6 +192,7 @@ public class EnemyAI : MonoBehaviour
         // Disable the enemy
         
         GetComponent<BoxCollider2D>().enabled = false;
+        
 
         this.enabled = false;
 

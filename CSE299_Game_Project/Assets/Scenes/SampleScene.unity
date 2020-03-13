@@ -2098,7 +2098,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: d2acdb96fbcf5bb49bbbad4e64f2f98f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1241752266}
   animator: {fileID: 1241752262}
-  runSpeed: 100
+  runSpeed: 50
 --- !u!114 &1241752270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,7 +2317,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 7168
   attackRange: 1.59
-  attackDamage: 20
+  attackDamage: 5
+  BigDamage: 15
 --- !u!114 &1241752271
 MonoBehaviour:
   m_ObjectHideFlags: 0
