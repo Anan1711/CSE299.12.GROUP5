@@ -11,12 +11,14 @@ public class FireBallMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Making the fireball move.
         rb.velocity = transform.right * BallSpeed;
     }
 
     // Register enemies when hit.
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        // Only register if it is an enemy.
         EnemyAI enemy = hitInfo.GetComponent<EnemyAI>();
         if(enemy != null)
         {
@@ -35,10 +37,8 @@ public class FireBallMovement : MonoBehaviour
 
         Instantiate(impactEffect, transform.position, transform.rotation);
 
-        
-
         Destroy(gameObject);
-
+        
     }
     
 }

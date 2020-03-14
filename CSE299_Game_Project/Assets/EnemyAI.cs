@@ -8,12 +8,16 @@ public class EnemyAI : MonoBehaviour
 
     public Animator animator;
 
-    // Max health of the enemy
+    // Max health of the enemy.
     public int MaxHealth = 100;
 
     // Current health
     int currentHealth;
 
+    // removing the the enemy.
+    // public float LifeTime = 10f;
+
+    #region PathFinder Variables
 
     // This variable will reference our target (player)
     public Transform target;
@@ -48,7 +52,8 @@ public class EnemyAI : MonoBehaviour
 
     // To drive the movement of our enemy. Applying physics to our enenmy.
     Rigidbody2D rb;
-    
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -56,11 +61,11 @@ public class EnemyAI : MonoBehaviour
         // Assigning Max Health to current health.
         currentHealth = MaxHealth;
 
-        // Finding the seeker component on our object
+        // Finding the seeker component on our object.
         seeker = GetComponent<Seeker>();
         
 
-        // Finding the rigidbody component on our object
+        // Finding the rigidbody component on our object.
         rb = GetComponent<Rigidbody2D>();
         
 
@@ -71,6 +76,7 @@ public class EnemyAI : MonoBehaviour
         
     }
 
+    #region PathFinder
     void UpdatePath()
     {
         // Checking if we are not calculation a path then we can start a new one
@@ -167,7 +173,9 @@ public class EnemyAI : MonoBehaviour
 
         
     }
+    #endregion
 
+    #region Enemy Health and Death
     // Function for taking damage
     public void TakeDamage(int damage)
     {
@@ -190,17 +198,14 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("Isdead", true);
 
         // Disable the enemy
-        
         GetComponent<BoxCollider2D>().enabled = false;
-        
-
         this.enabled = false;
 
-       
+     }
+    #endregion
 
-    }
 
-    
+
 
 
 

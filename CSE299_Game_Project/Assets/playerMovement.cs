@@ -16,6 +16,8 @@ public class playerMovement : MonoBehaviour
     bool Jump = false;
     bool crouch = false;
 
+    
+
     // This function gets input from the player.
     // Update is called once per frame.
     void Update()
@@ -27,7 +29,7 @@ public class playerMovement : MonoBehaviour
         // Function for transitioning from idle to running animation.
         // Mathf.Abs takes the absolute value of the horizontalMove so that value is always positive.
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
+      
         // If we are jumping.
         if (Input.GetButtonDown("Jump"))
         {
