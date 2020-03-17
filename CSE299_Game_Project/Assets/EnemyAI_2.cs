@@ -5,49 +5,38 @@ using Pathfinding;
 
 public class EnemyAI_2 : MonoBehaviour
 {
-    public Animator animator;
+   /*public Transform EnemyAttackPoint;
+   public float attackRange = 0.5f;
+   public LayerMask PlayerLayers;
+   public int attackDamage;*/
 
+    #region Variables
+    public Animator animator;
     // Max health of the enemy
     public int MaxHealth = 200;
-
     // Current health
     int currentHealth;
-
     // This variable will reference our target (player)
     public Transform target;
-
     // This variable will control the speed
     public float speed2 = 500f;
-
-
     // This variable is for how close an enemy needs to be to a waypoint before it moves to a target
     public float nextwaypointDistance2 = 3f;
-
-
     // Referencing our enemy character
     public Transform enemyGFX;
-
-
     // private variable. The path we are following
     Path path2;
-
-
     // This variable will store the current waypoint of the path we are targeting
     int currentWaypoint2 = 0;
-
-
     // This variable is for knowing whether or not we reached the end of the path
     bool reachedEndOfPath2 = false;
-
-
     // This Seeker is responsible for generating a path to our target
     Seeker seeker2;
-
-
     // To drive the movement of our enemy. Applying physics to our enenmy.
     Rigidbody2D rb2;
+    #endregion
 
-
+    #region start
     // Start is called before the first frame update
     void Start()
     {
@@ -66,11 +55,13 @@ public class EnemyAI_2 : MonoBehaviour
         // 0f = amount of time we want to wait
         // .5f = repeat rate
         InvokeRepeating("UpdatePath", 0f, .5f);
+        
 
 
     }
+    #endregion
 
-
+    #region Pathfindar
     void UpdatePath()
     {
         // Checking if we are not calculation a path then we can start a new one
@@ -114,12 +105,21 @@ public class EnemyAI_2 : MonoBehaviour
         if (currentWaypoint2 >= path2.vectorPath.Count)
         {
             reachedEndOfPath2 = true;
+            if (reachedEndOfPath2 == true)
+            {
+                Attack2();
+            }
+
             return;
         }
         else
         {
             // There are more waypoint in the path. We haven't reached the end
             reachedEndOfPath2 = false;
+            if (reachedEndOfPath2 == false)
+            {
+                StopAttack2();
+            }
         }
 
 
@@ -169,8 +169,9 @@ public class EnemyAI_2 : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(rb2.velocity.x));
 
     }
+    #endregion
 
-
+    #region Enemy Hurt and Death
     // Function for taking damage
     public void TakeDamage(int damage)
     {
@@ -198,11 +199,19 @@ public class EnemyAI_2 : MonoBehaviour
         this.enabled = false;
 
     }
+    #endregion
 
+    #region Attack
 
-
-
-
-
+    void Attack2()
+    {
+        animator.SetBool("attack", true);
+        
+    }
+    void StopAttack2()
+    {
+        animator.SetBool("attack", false);
+    }
+    #endregion
 
 }

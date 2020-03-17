@@ -109,12 +109,20 @@ public class EnemyAI_3 : MonoBehaviour
         if (currentWaypoint3 >= path3.vectorPath.Count)
         {
             reachedEndOfPath3 = true;
+            if (reachedEndOfPath3 == true)
+            {
+                Attack();
+            }
             return;
         }
         else
         {
             // There are more waypoint in the path. We haven't reached the end
             reachedEndOfPath3 = false;
+            if (reachedEndOfPath3 == false)
+            {
+                StopAttack();
+            }
         }
 
 
@@ -193,6 +201,14 @@ public class EnemyAI_3 : MonoBehaviour
         
         this.enabled = false;
 
+    }
+    void Attack()
+    {
+        animator.SetBool("IsAttacking", true);
+    }
+    void StopAttack()
+    {
+        animator.SetBool("IsAttacking", false);
     }
 
 

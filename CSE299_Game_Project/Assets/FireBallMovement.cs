@@ -12,6 +12,7 @@ public class FireBallMovement : MonoBehaviour
     void Start()
     {
         // Making the fireball move.
+        //////////////////////////////////////////////// 
         rb.velocity = transform.right * BallSpeed;
     }
 
