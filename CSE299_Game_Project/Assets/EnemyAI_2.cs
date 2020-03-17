@@ -5,13 +5,14 @@ using Pathfinding;
 
 public class EnemyAI_2 : MonoBehaviour
 {
-   /*public Transform EnemyAttackPoint;
-   public float attackRange = 0.5f;
-   public LayerMask PlayerLayers;
-   public int attackDamage;*/
+    public Animator animator;
+    public Transform EnemyAttackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask PlayerLayers;
+    public int attackDamage;
 
     #region Variables
-    public Animator animator;
+    
     // Max health of the enemy
     public int MaxHealth = 200;
     // Current health
@@ -120,6 +121,7 @@ public class EnemyAI_2 : MonoBehaviour
             {
                 StopAttack2();
             }
+
         }
 
 
@@ -201,17 +203,53 @@ public class EnemyAI_2 : MonoBehaviour
     }
     #endregion
 
-    #region Attack
 
+    #region Attack
     void Attack2()
     {
-        animator.SetBool("attack", true);
-        
+        if (reachedEndOfPath2 == true)
+        {
+            animator.SetBool("attack", true);
+        }
+
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+
+        foreach (Collider2D player in hitPlayer)
+        {
+           // Debug.Log("Player got hit" + player.name);
+           try
+            {
+              if(player.GetComponent<playerMovement>().currentHealth != 0)
+                {
+                    player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                }
+              else
+                {
+                    StopAttack2();
+                }
+
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 1");
+            }
+        }
+
     }
     void StopAttack2()
     {
         animator.SetBool("attack", false);
     }
-    #endregion
+   
 
+    void OnDrawGizmosSelected()
+    {
+        if (EnemyAttackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(EnemyAttackPoint.position, attackRange);
+    }
+    #endregion
 }

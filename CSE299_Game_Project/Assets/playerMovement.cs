@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    public int MaxHealth = 200;
+    public int currentHealth;
+
     // Variable for referencing Character Controller script.
     public CharacterController2D controller;
 
@@ -11,12 +14,17 @@ public class playerMovement : MonoBehaviour
 
     // Variable for controlling the speed of the movement.
     public float runSpeed = 100f;
+    
 
     float horizontalMove = 0f;
     bool Jump = false;
     bool crouch = false;
 
-    
+    void Start()
+    {
+        currentHealth = MaxHealth;
+
+    }
 
     // This function gets input from the player.
     // Update is called once per frame.
@@ -76,14 +84,40 @@ public class playerMovement : MonoBehaviour
     {
         // Moves the character
         // Time.fixedDeltaTime is the time elapsed when this function was last called. Ensures we move the same amount no matter how often FixedUpdate is called.
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, Jump);
-
-        
-
-        
-        
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, Jump); 
 
         // To stop jumping.
         Jump = false;
     }
+
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        // play hurt animation
+        animator.SetTrigger("Hurt");
+
+        // if no health remains then enemy dies
+        if (currentHealth <= 0)
+        {
+            PlayerDeath();
+        }
+
+    }
+    void PlayerDeath()
+    {
+        Debug.Log("Player Died");
+        // Die animation
+        animator.SetBool("IsDead", true);
+
+         // Disable the enemy
+
+         GetComponent<BoxCollider2D>().enabled = false;
+        // GetComponent<CircleCollider2D>().enabled = false;
+        this.enabled = false;
+
+    }
+
+
 }
