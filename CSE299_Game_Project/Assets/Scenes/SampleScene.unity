@@ -1515,10 +1515,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861186278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.34, y: 2.33, z: -3.1139662}
+  m_LocalPosition: {x: 55.54, y: 1.82, z: -3.1139662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1183549809}
+  - {fileID: 924694772}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1626,6 +1627,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1183549807}
+  EnemyAttackPoint: {fileID: 924694772}
+  attackRange: 0.5
+  PlayerLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 2
   MaxHealth: 100
   target: {fileID: 1241752264}
   speed3: 650
@@ -1664,6 +1671,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 780466745}
+  - {fileID: 1199053997}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1771,11 +1779,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 780466743}
+  EnemyAttackPoint: {fileID: 1199053997}
+  attackRange: 0.5
+  PlayerLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 2
   MaxHealth: 100
   target: {fileID: 1241752264}
   speed: 650
   nextwaypointDistance: 3
   enemyGFX: {fileID: 780466745}
+--- !u!1 &924694771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924694772}
+  m_Layer: 12
+  m_Name: Enemy3_AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924694772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924694771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.67, y: -0.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 861186279}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975515214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2104,36 @@ Transform:
   m_Father: {fileID: 861186279}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1199053996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1199053997}
+  m_Layer: 0
+  m_Name: Enemy1_AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1199053997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199053996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.23, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 904967154}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241752261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,6 +2370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30e7b50d1da6894f8c192a26dd51289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 200
+  currentHealth: 0
   controller: {fileID: 1241752266}
   animator: {fileID: 1241752262}
   runSpeed: 50
@@ -2432,7 +2508,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 975515215}
-  MaxHealth: 100
+  EnemyAttackPoint: {fileID: 2134634721}
+  attackRange: 0.5
+  PlayerLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  attackDamage: 1
+  MaxHealth: 200
   target: {fileID: 1241752264}
   speed2: 650
   nextwaypointDistance2: 3
@@ -2713,7 +2795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134634720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.48, y: -0.34, z: -3.1139662}
+  m_LocalPosition: {x: 1.17, y: -0.39, z: -3.1139662}
   m_LocalScale: {x: 0.89113, y: 0.89113, z: 0.89113}
   m_Children: []
   m_Father: {fileID: 1257672079}

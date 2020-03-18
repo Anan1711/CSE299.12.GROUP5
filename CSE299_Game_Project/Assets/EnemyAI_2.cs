@@ -181,7 +181,8 @@ public class EnemyAI_2 : MonoBehaviour
 
         // play hurt animation
         animator.SetTrigger("Hurt");
-
+        
+ 
         // if no health remains then enemy dies
         if (currentHealth <= 0)
         {
@@ -194,6 +195,7 @@ public class EnemyAI_2 : MonoBehaviour
     {
         // Die animation
         animator.SetBool("IsDead", true);
+        
 
         // Disable the enemy
         
@@ -210,32 +212,27 @@ public class EnemyAI_2 : MonoBehaviour
         if (reachedEndOfPath2 == true)
         {
             animator.SetBool("attack", true);
-        }
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
 
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
-
-        foreach (Collider2D player in hitPlayer)
-        {
-           // Debug.Log("Player got hit" + player.name);
-           try
+            foreach (Collider2D player in hitPlayer)
             {
-              if(player.GetComponent<playerMovement>().currentHealth != 0)
+                try
                 {
-                    player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                    if (player.GetComponent<playerMovement>().currentHealth != 0)
+                    {
+                        player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                    }
+                    else
+                    {
+                        StopAttack2();
+                    }
                 }
-              else
+                catch
                 {
-                    StopAttack2();
+
                 }
-
-
             }
-            catch
-            {
-                // Debug.LogError("Something is wrong 1");
-            }
-        }
-
+        }   
     }
     void StopAttack2()
     {

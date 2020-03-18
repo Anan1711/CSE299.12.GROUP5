@@ -6,6 +6,10 @@ using Pathfinding;
 public class EnemyAI_3 : MonoBehaviour
 {
     public Animator animator;
+    public Transform EnemyAttackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask PlayerLayers;
+    public int attackDamage;
 
     // Max health of the enemy
     public int MaxHealth = 200;
@@ -204,13 +208,43 @@ public class EnemyAI_3 : MonoBehaviour
     }
     void Attack()
     {
-        animator.SetBool("IsAttacking", true);
+        if (reachedEndOfPath3 == true)
+        {
+            animator.SetBool("IsAttacking", true);
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+
+            foreach (Collider2D player in hitPlayer)
+            {
+                try
+                {
+                    if (player.GetComponent<playerMovement>().currentHealth != 0)
+                    {
+                        player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                    }
+                    else
+                    {
+                        StopAttack();
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
     }
     void StopAttack()
     {
         animator.SetBool("IsAttacking", false);
     }
-
+    void OnDrawGizmosSelected()
+    {
+        if (EnemyAttackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(EnemyAttackPoint.position, attackRange);
+    }
 
 
 
