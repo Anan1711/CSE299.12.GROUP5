@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public int MaxHealth = 200;
-    public int currentHealth;
+    public float MaxHealth = 200;
+    public float currentHealth;
 
     // Variable for referencing Character Controller script.
     public CharacterController2D controller;
@@ -91,7 +91,7 @@ public class playerMovement : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 

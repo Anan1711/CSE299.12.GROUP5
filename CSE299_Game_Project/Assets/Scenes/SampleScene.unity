@@ -221,8 +221,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1894098721
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.0000585, y: 1.0000585, z: 0}
@@ -1372,9 +1372,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1894098721
+  m_SortingLayer: -1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 7068070d5ed9e584b8328576d158d93c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1628,11 +1628,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1183549807}
   EnemyAttackPoint: {fileID: 924694772}
-  attackRange: 0.5
+  attackRange: 0.1
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 2
+  attackDamage: 0.5
   MaxHealth: 100
   target: {fileID: 1241752264}
   speed3: 650
@@ -1737,7 +1737,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.24543571, y: 0.64426804}
+  m_Offset: {x: 0.18399143, y: 0.73984814}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1748,7 +1748,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1044617, y: 2.288536}
+  m_Size: {x: 2.2273502, y: 2.4796963}
   m_EdgeRadius: 0
 --- !u!58 &904967158
 CircleCollider2D:
@@ -1780,11 +1780,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 780466743}
   EnemyAttackPoint: {fileID: 1199053997}
-  attackRange: 0.5
+  attackRange: 0.1
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 2
+  attackDamage: 0.5
   MaxHealth: 100
   target: {fileID: 1241752264}
   speed: 650
@@ -1892,9 +1892,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1894098721
+  m_SortingLayer: -1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 14e7f31b741541342806b5bb97688dda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2076,9 +2076,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1894098721
+  m_SortingLayer: -1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 697d11b9a4ea0d148bc92512de103f3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2213,8 +2213,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1894098721
+  m_SortingLayer: -1
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2461,7 +2461,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17, y: 1.52}
+  m_Offset: {x: -0.16999996, y: 1.5544701}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2472,7 +2472,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.187621, y: 2.1556735}
+  m_Size: {x: 2.187621, y: 2.2246137}
   m_EdgeRadius: 0
 --- !u!50 &1257672081
 Rigidbody2D:
@@ -2509,11 +2509,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 975515215}
   EnemyAttackPoint: {fileID: 2134634721}
-  attackRange: 0.5
+  attackRange: 0.1
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 256
-  attackDamage: 1
+  attackDamage: 0.5
   MaxHealth: 200
   target: {fileID: 1241752264}
   speed2: 650
@@ -2560,9 +2560,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13, y: 0.05}
+  m_Offset: {x: -0.17, y: -0.1395886}
   serializedVersion: 2
-  m_Radius: 1.0562667
+  m_Radius: 0.866678
 --- !u!95 &1257672086
 Animator:
   serializedVersion: 3
@@ -2795,7 +2795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134634720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.17, y: -0.39, z: -3.1139662}
+  m_LocalPosition: {x: 1.75, y: -0.13, z: -3.1139662}
   m_LocalScale: {x: 0.89113, y: 0.89113, z: 0.89113}
   m_Children: []
   m_Father: {fileID: 1257672079}

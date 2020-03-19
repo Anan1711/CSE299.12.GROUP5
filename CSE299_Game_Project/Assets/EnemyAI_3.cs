@@ -5,19 +5,23 @@ using Pathfinding;
 
 public class EnemyAI_3 : MonoBehaviour
 {
+    #region Attack Variables
     public Animator animator;
     public Transform EnemyAttackPoint;
     public float attackRange = 0.5f;
     public LayerMask PlayerLayers;
-    public int attackDamage;
+    public float attackDamage;
+    #endregion
 
+    #region Health Variables
     // Max health of the enemy
     public int MaxHealth = 200;
 
     // Current health
     int currentHealth;
+    #endregion
 
-
+    #region PathFinder Variables
     // This variable will reference our target (player)
     public Transform target;
 
@@ -51,7 +55,7 @@ public class EnemyAI_3 : MonoBehaviour
 
     // To drive the movement of our enemy. Applying physics to our enenmy.
     Rigidbody2D rb3;
-
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +77,7 @@ public class EnemyAI_3 : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
+    #region Pathfinder
     void UpdatePath()
     {
         // Checking if we are not calculation a path then we can start a new one
@@ -177,7 +182,9 @@ public class EnemyAI_3 : MonoBehaviour
 
 
     }
+    #endregion
 
+    #region Enemy Hurt and Death
     // Function for taking damage
     public void TakeDamage(int damage)
     {
@@ -185,6 +192,10 @@ public class EnemyAI_3 : MonoBehaviour
 
         // play hurt animation
         animator.SetTrigger("Hurt");
+        if (currentHealth != 0)
+        {
+            AttackAgain();
+        }
 
         // if no health remains then enemy dies
         if (currentHealth <= 0)
@@ -192,6 +203,30 @@ public class EnemyAI_3 : MonoBehaviour
             EnemyDeath();
         }
 
+    }
+
+    void AttackAgain()
+    {
+        Collider2D[] hitPlayer3 = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+
+        foreach (Collider2D player in hitPlayer3)
+        {
+            try
+            {
+                if (player.GetComponent<playerMovement>().currentHealth != 0)
+                {
+                    player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                }
+                else
+                {
+                    StopAttack();
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 
     void EnemyDeath()
@@ -206,6 +241,9 @@ public class EnemyAI_3 : MonoBehaviour
         this.enabled = false;
 
     }
+    #endregion
+
+    #region Enemy Attack
     void Attack()
     {
         if (reachedEndOfPath3 == true)
@@ -245,7 +283,7 @@ public class EnemyAI_3 : MonoBehaviour
         }
         Gizmos.DrawWireSphere(EnemyAttackPoint.position, attackRange);
     }
-
+    #endregion
 
 
 

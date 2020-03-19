@@ -5,18 +5,22 @@ using Pathfinding;
 
 public class EnemyAI_2 : MonoBehaviour
 {
+    #region Attack Variables
     public Animator animator;
     public Transform EnemyAttackPoint;
     public float attackRange = 0.5f;
     public LayerMask PlayerLayers;
-    public int attackDamage;
+    public float attackDamage;
+    #endregion
 
-    #region Variables
-    
+    #region Health Variables
     // Max health of the enemy
     public int MaxHealth = 200;
     // Current health
     int currentHealth;
+    #endregion
+
+    #region PathFinder Variables
     // This variable will reference our target (player)
     public Transform target;
     // This variable will control the speed
@@ -37,7 +41,7 @@ public class EnemyAI_2 : MonoBehaviour
     Rigidbody2D rb2;
     #endregion
 
-    #region start
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +64,7 @@ public class EnemyAI_2 : MonoBehaviour
 
 
     }
-    #endregion
+    
 
     #region Pathfindar
     void UpdatePath()
@@ -108,7 +112,7 @@ public class EnemyAI_2 : MonoBehaviour
             reachedEndOfPath2 = true;
             if (reachedEndOfPath2 == true)
             {
-                Attack2();
+                Attack();
             }
 
             return;
@@ -119,7 +123,7 @@ public class EnemyAI_2 : MonoBehaviour
             reachedEndOfPath2 = false;
             if (reachedEndOfPath2 == false)
             {
-                StopAttack2();
+                StopAttack();
             }
 
         }
@@ -181,14 +185,42 @@ public class EnemyAI_2 : MonoBehaviour
 
         // play hurt animation
         animator.SetTrigger("Hurt");
-        
- 
+        if (currentHealth != 0)
+        {
+            AttackAgain();
+        }
+
+
         // if no health remains then enemy dies
         if (currentHealth <= 0)
         {
             EnemyDeath();
         }
 
+    }
+
+    void AttackAgain()
+    {
+        Collider2D[] hitPlayer2 = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+
+        foreach (Collider2D player in hitPlayer2)
+        {
+            try
+            {
+                if (player.GetComponent<playerMovement>().currentHealth != 0)
+                {
+                    player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                }
+                else
+                {
+                    StopAttack();
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 
     void EnemyDeath()
@@ -205,9 +237,8 @@ public class EnemyAI_2 : MonoBehaviour
     }
     #endregion
 
-
-    #region Attack
-    void Attack2()
+    #region Enemy Attack
+    void Attack()
     {
         if (reachedEndOfPath2 == true)
         {
@@ -224,7 +255,7 @@ public class EnemyAI_2 : MonoBehaviour
                     }
                     else
                     {
-                        StopAttack2();
+                        StopAttack();
                     }
                 }
                 catch
@@ -234,7 +265,7 @@ public class EnemyAI_2 : MonoBehaviour
             }
         }   
     }
-    void StopAttack2()
+    void StopAttack()
     {
         animator.SetBool("attack", false);
     }

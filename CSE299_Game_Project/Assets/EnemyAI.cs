@@ -5,21 +5,22 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-
+    #region Attack Variables
     public Animator animator;
     public Transform EnemyAttackPoint;
     public float attackRange = 0.5f;
     public LayerMask PlayerLayers;
-    public int attackDamage;
+    public float attackDamage;
+    #endregion
 
+    #region Health Variables
     // Max health of the enemy.
     public int MaxHealth = 100;
 
     // Current health
     int currentHealth;
+    #endregion
 
-    // removing the the enemy.
-    // public float LifeTime = 10f;
 
     #region PathFinder Variables
 
@@ -193,15 +194,45 @@ public class EnemyAI : MonoBehaviour
     {
         currentHealth -= damage;
 
+        
         // play hurt animation
         animator.SetTrigger("Hurt");
+        if(currentHealth != 0)
+        {
+            AttackAgain();
+        }
 
         // if no health remains then enemy dies
         if (currentHealth <= 0)
         {
             EnemyDeath();
         }
+        
 
+    }
+
+    void AttackAgain()
+    {
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+
+        foreach (Collider2D player in hitPlayer)
+        {
+            try
+            {
+                if (player.GetComponent<playerMovement>().currentHealth != 0)
+                {
+                    player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                }
+                else
+                {
+                    StopAttack();
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 
     void EnemyDeath()
@@ -216,7 +247,7 @@ public class EnemyAI : MonoBehaviour
      }
     #endregion
 
-    #region Attack
+    #region Enemy Attack
     void Attack()
     {
         if (reachedEndOfPath == true)
@@ -259,23 +290,5 @@ public class EnemyAI : MonoBehaviour
 
     #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
