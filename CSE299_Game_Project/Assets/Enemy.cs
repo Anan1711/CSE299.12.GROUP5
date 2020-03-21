@@ -6,12 +6,19 @@ using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
+    #region Attack Variables
+    
+    public Transform AttackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask PlayerLayers;
+    public int attackDamage;
+    #endregion
 
-   
     public Animator animator;
     public int MaxHealth = 100;
     int currentHealth;
-    // Start is called before the first frame update
+
+  
     void Start()
     {
         currentHealth = MaxHealth;
@@ -48,8 +55,8 @@ public class Enemy : MonoBehaviour
         
         
             GetComponent<AIDestinationSetter>().enabled = false;
-        GetComponent<AIPath>().enabled = false;
-        GetComponent<Seeker>().enabled = false;
+            GetComponent<AIPath>().enabled = false;
+            GetComponent<Seeker>().enabled = false;
 
 
 
@@ -65,5 +72,41 @@ public class Enemy : MonoBehaviour
     }
 
 
+    void FixedUpdate()
+    {
+       
+
+
+      
+
+     
+    }
+
+
+
+
+        #region Enemy Attack
+        void Attack()
+    {
+
+        animator.SetBool("Attack", true);
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(AttackPoint.position, attackRange, PlayerLayers);
+        foreach (Collider2D player in hitPlayer)
+        {
+            Debug.Log("WE hit" + player.name);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (AttackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(AttackPoint.position, attackRange);
+    }
+
+    #endregion
 
 }
+

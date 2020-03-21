@@ -4,9 +4,12 @@ using UnityEngine;
 using Pathfinding;
 
 public class EnemyGFX : MonoBehaviour
+
 {
     public Animator animator;
     public AIPath aiPath;
+  
+
 
     void Update()
     {

@@ -1,15 +1,17 @@
-﻿  using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
 
+
+
     public Animator animator;
     public LayerMask enemyLayers;
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    
+
     public int attackDamage = 40;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -37,6 +39,10 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+        if (Input.GetButtonDown("Fire6"))
+        {
+            Attack();
+        }
     }
     void Attack()
     {
@@ -44,7 +50,7 @@ public class PlayerCombat : MonoBehaviour
         {
             animator.SetTrigger("Attack1");
 
-           
+
         }
         else if (Input.GetButtonDown("Fire2"))
         {
@@ -58,15 +64,27 @@ public class PlayerCombat : MonoBehaviour
         {
             animator.SetTrigger("Strike");
         }
-        else
+        else if (Input.GetButtonDown("Fire5"))
         {
             animator.SetTrigger("UltraAtk");
+        }
+        else
+        {
+            animator.SetTrigger("FireAtk");
         }
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            try
+            {
+                enemy.GetComponent<EnemyAI_2>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 2");
+            }
         }
     }
     void OnDrawGizmosSelected()

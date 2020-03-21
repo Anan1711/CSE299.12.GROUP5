@@ -6,6 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
     //referencing CharacterController2D controller
+    //---------------------------------------------HEALTH
+    public int MaxHealth = 100;
+    public float currentHealth;
+
+
     public Animator animator;
 
     public float runSpeed = 40f;
@@ -14,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     bool crouch = false;
 
 
+    void Start()
+    {
+        currentHealth = MaxHealth;
+
+    }
 
     void Update()
     //apply that input to our player
@@ -25,31 +35,61 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
-        }else
-        if(Input.GetButtonDown("Crouch"))
+        }
+        else
+        if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
-        }else if (Input.GetButtonUp("Crouch"))
+        }
+        else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }
     }
-    public void Onlanding ()
+    public void Onlanding()
     {
         animator.SetBool("IsJumping", false);
     }
-    public void OnCrouching (bool isCrouching)
+    public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("IsCrouching", isCrouching);
     }
     void FixedUpdate()
-        //apply that input to our chararter
+    //apply that input to our chararter
     {
         //referencing CharacterController2D
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         //Time.fixedDeltaTime is amount of time elapsed since last func called
         jump = false;
     }
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+
+        // play hurt animation
+        animator.SetTrigger("Hurt");
+
+        // if no health remains then enemy dies
+        if (currentHealth <= 0)
+        {
+            PlayerDeath();
+        }
+
+    }
+    void PlayerDeath()
+    {
+        Debug.Log("Player Died");
+        // Die animation
+        animator.SetBool("Isdead", true);
+
+        // Disable the enemy
+
+        GetComponent<BoxCollider2D>().enabled = false;
+        // GetComponent<CircleCollider2D>().enabled = false;
+        this.enabled = false;
+
+    }
 }
+
 
 
