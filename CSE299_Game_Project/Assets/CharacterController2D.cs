@@ -22,14 +22,6 @@ public class CharacterController2D : MonoBehaviour
 
 
 
-	//======================================================================================================================
-	// Extra Jumps
-
-	//private int numofJumps = 0;
-	//private int maxJumps = 2;
-	//private bool extraJumps;
-	//===========================================================================================================================
-
 
 	[Header("Events")]
 	[Space]
@@ -149,67 +141,11 @@ public class CharacterController2D : MonoBehaviour
 
 
 
-		/*
 		
-		else
-				{
-					if (extraJumps)
-					{
-						// Add a vertical force to the player.
-						m_Grounded = true;
-						m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce)*2);
-						extraJumps = false;
-					}
-				}
-
-
-				*/
-
-
-
-		/*
-						if (m_Grounded)
-							numofJumps = 0;
-						if (m_Grounded || numofJumps < maxJumps)
-						{
-							if (!m_Grounded)
-								m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D, 0);
-							m_Rigidbody2D =  Vector2(0f, m_JumpForce);
-							numofJumps += 1;
-							m_Grounded = false;
-						} jump = false;
-
-				*/
-
-
-
 
 	}
 
-	// *********************************************    Extra Jump    ****************************************************
-	//**************************************************************************************************************************
-
-
-
-
-
-
-
-
-	/*
-void Update()
-		if(m_Grounded == true){
-	extraJumps = 2;
- {
-	if(Input.GetKeyDown(KeyCode.UpArrow) && extraJumps > 0)
-   {
-		m_Rigidbody2D.velocity = m_Velocity.up * m_JumpForce;
-		extraJumps--;
-}
- }
-*/
-
-
+	
 
 
 

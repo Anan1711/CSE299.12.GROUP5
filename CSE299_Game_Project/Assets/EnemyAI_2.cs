@@ -9,7 +9,7 @@ public class EnemyAI_2 : MonoBehaviour
     public Transform EnemyAttackPoint;
     public float attackRange = 0.5f;
     public LayerMask PlayerLayers;
-    public int attackDamage;
+    public float attackDamage;
 
     // Max health of the enemy
     public int MaxHealth = 200;
@@ -116,11 +116,23 @@ public class EnemyAI_2 : MonoBehaviour
         if (currentWaypoint2 >= path2.vectorPath.Count)
         {
             reachedEndOfPath2 = true;
+
             if (reachedEndOfPath2 == true)
             {
                 Attack();
             }
             return;
+        }
+        else
+        {
+            // There are more waypoint in the path. We haven't reached the end
+            reachedEndOfPath2 = false;
+
+            if (reachedEndOfPath2 == false)
+            {
+                StopAttack();
+            }
+
         }
 
         /*  
@@ -203,9 +215,9 @@ public class EnemyAI_2 : MonoBehaviour
 
     void AttackAgain()
     {
-        Collider2D[] hitPlayer2 = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
 
-        foreach (Collider2D player in hitPlayer2)
+        foreach (Collider2D player in hitPlayer)
         {
             try
             {

@@ -485,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473129876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.59, y: 3.46, z: -10}
+  m_LocalPosition: {x: -23.14, y: 3.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1439928489}
@@ -807,7 +807,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1.5
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -913,15 +913,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 160770648}
   EnemyAttackPoint: {fileID: 399157107}
-  attackRange: 0.5
+  attackRange: 0.51
   PlayerLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 513
   attackDamage: 2
   MaxHealth: 400
   target: {fileID: 1837245422}
   speed2: 500
-  nextwaypointDistance2: 1.5
+  nextwaypointDistance2: 2
   enemyGFX: {fileID: 160770647}
 --- !u!1 &1376160017
 GameObject:
@@ -1001,7 +1001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376160017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.59, y: 3.46, z: -10}
+  m_LocalPosition: {x: -23.14, y: 3.46, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1718,7 +1718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837245420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.59, y: 3.76, z: 0}
+  m_LocalPosition: {x: -23.14, y: 3.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87411711}
@@ -1804,7 +1804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1837245427}
-  MaxHealth: 1000000
+  MaxHealth: 5000
   currentHealth: 0
   animator: {fileID: 1837245428}
   runSpeed: 40
@@ -2046,7 +2046,7 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
+  slowdownDistance: 0.85
   pickNextWaypointDist: 0.84
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
