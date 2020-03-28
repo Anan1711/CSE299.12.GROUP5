@@ -151,6 +151,36 @@ Transform:
   m_Father: {fileID: 1696645719}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &83769173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83769174}
+  m_Layer: 10
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &83769174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83769173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.51, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1696645719}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138436615
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.79700035, y: -0.40200007, z: -10}
+  m_LocalPosition: {x: -0.79700047, y: -0.40200007, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1042,7 +1072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575256392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.79700035, y: -0.40200007, z: -10}
+  m_LocalPosition: {x: -0.79700047, y: -0.40200007, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 367278268}
@@ -2377,6 +2407,7 @@ GameObject:
   - component: {fileID: 1696645723}
   - component: {fileID: 1696645724}
   - component: {fileID: 1696645725}
+  - component: {fileID: 1696645726}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -2498,6 +2529,7 @@ Transform:
   - {fileID: 81817389}
   - {fileID: 486955421}
   - {fileID: 1991077058}
+  - {fileID: 83769174}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2618,6 +2650,21 @@ MonoBehaviour:
     m_Bits: 4096
   attackDamage: 40
   attackRate: 2
+--- !u!114 &1696645726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696645716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bec8f846315334290559f304318bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 83769174}
+  bulletPrefab: {fileID: 3747354556526716296, guid: 01090fce579d40740bb3e44a56a406fe,
+    type: 3}
 --- !u!1 &1772365408
 GameObject:
   m_ObjectHideFlags: 0
