@@ -245,13 +245,13 @@ public class EnemyAI_2 : MonoBehaviour
             animator.SetBool("attack", true);
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
 
-            foreach (Collider2D player in hitPlayer)
+            foreach (Collider2D player2 in hitPlayer)
             {
                 try
                 {
-                    if (player.GetComponent<playerMovement>().currentHealth != 0)
+                    if (player2.GetComponent<playerMovement>().currentHealth != 0)
                     {
-                        player.GetComponent<playerMovement>().TakeDamage(attackDamage);
+                        player2.GetComponent<playerMovement>().TakeDamage(attackDamage);
                     }
                     else
                     {

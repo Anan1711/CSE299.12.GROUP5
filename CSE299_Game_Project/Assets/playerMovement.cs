@@ -110,6 +110,7 @@ public class playerMovement : MonoBehaviour
         Debug.Log("Player Died");
         // Die animation
         animator.SetBool("IsDead", true);
+        FindObjectOfType<gameManager>().EndGame();
 
          // Disable the enemy
 
@@ -118,14 +119,14 @@ public class playerMovement : MonoBehaviour
         this.enabled = false;
 
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.CompareTag("Coin"))
         {
+
             Destroy(other.gameObject);
         }
+       
     }
-    
-
 }
