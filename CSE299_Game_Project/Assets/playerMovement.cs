@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     public float MaxHealth = 200;
     public float currentHealth;
+    public HealthBar healthbar;
 
     // Variable for referencing Character Controller script.
     public CharacterController2D controller;
@@ -23,6 +24,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         currentHealth = MaxHealth;
+        healthbar.SetMaxHealth(MaxHealth);
 
     }
 
@@ -94,6 +96,7 @@ public class playerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
 
         // play hurt animation
         animator.SetTrigger("Hurt");
