@@ -7,8 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     //referencing CharacterController2D controller
     //---------------------------------------------HEALTH
-    public int MaxHealth = 100;
+    public float MaxHealth = 100;
     public float currentHealth;
+    //health bar
+    public HealthBar healthBar;
 
 
     public Animator animator;
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         currentHealth = MaxHealth;
+        //healthbar
+        healthBar.SetMaxHealth(MaxHealth);
 
     }
 
@@ -65,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         // play hurt animation
         animator.SetTrigger("Hurt");

@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire6"))
+        if (Input.GetButtonDown("Fire7"))
         {
             Shoot();
         }
@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
     {
         // make copies of the fireball.
         Instantiate(FireBallPreFab, FirePoint.position, FirePoint.rotation);
+       
     }
 }
 

@@ -4,12 +4,15 @@ using UnityEngine;
 using Pathfinding;
 
 public class EnemyAI_2 : MonoBehaviour
+
 {
+    public HealthBar healthBar;
     public Animator animator;
     public Transform EnemyAttackPoint;
     public float attackRange = 0.5f;
     public LayerMask PlayerLayers;
     public float attackDamage;
+    public GameObject deathEffect;
 
     // Max health of the enemy
     public int MaxHealth = 200;
@@ -57,6 +60,7 @@ public class EnemyAI_2 : MonoBehaviour
     {
         // Assigning Max Health to current health.
         currentHealth = MaxHealth;
+        healthBar.SetMaxHealth(MaxHealth);
 
         // Finding the seeker component on our object
         seeker2 = GetComponent<Seeker>();
@@ -196,6 +200,7 @@ public class EnemyAI_2 : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         // play hurt animation
         animator.SetTrigger("Hurt");
@@ -248,6 +253,10 @@ public class EnemyAI_2 : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
 
+      // Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        
+
     }
     #endregion
 
@@ -294,4 +303,5 @@ public class EnemyAI_2 : MonoBehaviour
         Gizmos.DrawWireSphere(EnemyAttackPoint.position, attackRange);
     }
     #endregion
+
 }

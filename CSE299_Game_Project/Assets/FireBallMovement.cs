@@ -17,7 +17,7 @@ public class FireBallMovement : MonoBehaviour
     // Register enemies when hit.
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        EnemyAI_2 enemy = hitInfo.GetComponent<EnemyAI_2>();
         if (enemy != null)
         {
             enemy.TakeDamage(FireBallDamage);
@@ -25,10 +25,10 @@ public class FireBallMovement : MonoBehaviour
        
 
         Instantiate(ImpactEffect, transform.position, transform.rotation);
-
-
-
         Destroy(gameObject);
+        
+
+       
 
     }
 
