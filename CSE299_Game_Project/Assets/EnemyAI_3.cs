@@ -17,8 +17,14 @@ public class EnemyAI_3 : MonoBehaviour
     // Max health of the enemy
     public int MaxHealth = 200;
 
+    private int _curHealth;
+
     // Current health
-    int currentHealth;
+    public int currentHealth
+    {
+        get { return _curHealth; }
+        set { _curHealth = Mathf.Clamp(value, 0, MaxHealth); }
+    }
     #endregion
 
     #region PathFinder Variables
@@ -57,11 +63,19 @@ public class EnemyAI_3 : MonoBehaviour
     Rigidbody2D rb3;
     #endregion
 
+    [Header("Optional: ")]
+    [SerializeField]
+    private StatusIndicator statusIndicator;
+
     // Start is called before the first frame update
     void Start()
     {
         // Assigning Max Health to current health.
         currentHealth = MaxHealth;
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(currentHealth, MaxHealth);
+        }
 
         // Finding the seeker component on our object
         seeker3 = GetComponent<Seeker>();
@@ -202,6 +216,10 @@ public class EnemyAI_3 : MonoBehaviour
         {
             EnemyDeath();
         }
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(currentHealth, MaxHealth);
+        }
 
     }
 
@@ -239,7 +257,12 @@ public class EnemyAI_3 : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         
         this.enabled = false;
+        Invoke("Delete", 5f);
 
+    }
+    void Delete()
+    {
+        Destroy(gameObject);
     }
     #endregion
 

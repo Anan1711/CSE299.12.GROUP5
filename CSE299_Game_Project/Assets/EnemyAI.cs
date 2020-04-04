@@ -14,11 +14,20 @@ public class EnemyAI : MonoBehaviour
     #endregion
 
     #region Health Variables
+   
+
     // Max health of the enemy.
     public int MaxHealth = 100;
 
+    private int _curHealth;
+
     // Current health
-    int currentHealth;
+    public int currentHealth
+    {
+        get { return _curHealth; }
+        set { _curHealth = Mathf.Clamp(value, 0, MaxHealth); }
+    }
+    
     #endregion
 
 
@@ -60,11 +69,21 @@ public class EnemyAI : MonoBehaviour
 
     #endregion
 
+    [Header("Optional: ")]
+    [SerializeField]
+    private StatusIndicator statusIndicator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // Assigning Max Health to current health.
         currentHealth = MaxHealth;
+        if(statusIndicator != null)
+        {
+            statusIndicator.SetHealth(currentHealth, MaxHealth);
+        }
+       
 
         // Finding the seeker component on our object.
         seeker = GetComponent<Seeker>();
@@ -193,8 +212,9 @@ public class EnemyAI : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         
+
+
         // play hurt animation
         animator.SetTrigger("Hurt");
         if(currentHealth != 0)
@@ -207,7 +227,11 @@ public class EnemyAI : MonoBehaviour
         {
             EnemyDeath();
         }
-        
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(currentHealth, MaxHealth);
+        }
+
 
     }
 
@@ -243,8 +267,13 @@ public class EnemyAI : MonoBehaviour
         // Disable the enemy
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
+        Invoke("Delete", 5f);
 
-     }
+    }
+    void Delete()
+    {
+        Destroy(gameObject);
+    }
     #endregion
 
     #region Enemy Attack
