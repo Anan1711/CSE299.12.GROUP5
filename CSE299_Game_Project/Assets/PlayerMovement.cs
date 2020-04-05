@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        //HealthBar
         healthBar.SetHealth(currentHealth);
 
         // play hurt animation

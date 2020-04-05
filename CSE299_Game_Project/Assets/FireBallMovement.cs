@@ -27,6 +27,11 @@ public class FireBallMovement : MonoBehaviour
         {
             enemy2.TakeDamage(FireBallDamage);
         }
+        EnemyAI_3 enemy3 = hitInfo.GetComponent<EnemyAI_3>();
+        if (enemy3 != null)
+        {
+            enemy3.TakeDamage(FireBallDamage);
+        }
 
 
         Instantiate(ImpactEffect, transform.position, transform.rotation);

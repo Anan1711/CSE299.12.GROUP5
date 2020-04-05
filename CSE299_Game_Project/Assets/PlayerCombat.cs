@@ -94,6 +94,15 @@ public class PlayerCombat : MonoBehaviour
             {
                 // Debug.LogError("Something is wrong 2");
             }
+            try
+            {
+                enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 3");
+            }
         }
     }
     void OnDrawGizmosSelected()
