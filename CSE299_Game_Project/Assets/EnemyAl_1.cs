@@ -249,10 +249,12 @@ public class EnemyAl_1 : MonoBehaviour
 
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
-
+        Invoke("Delete", 10f);
         // Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-
+        void Delete()
+        {
+            Destroy(gameObject);
+        }
 
     }
     #endregion
