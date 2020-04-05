@@ -78,6 +78,15 @@ public class PlayerCombat : MonoBehaviour
         {
             try
             {
+                enemy.GetComponent<EnemyAl_1>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 1");
+            }
+            try
+            {
                 enemy.GetComponent<EnemyAI_2>().TakeDamage(attackDamage);
 
             }
