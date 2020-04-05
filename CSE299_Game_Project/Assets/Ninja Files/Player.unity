@@ -715,7 +715,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 209577729}
   - component: {fileID: 209577728}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy4GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,7 +1054,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fbe2ee91bc3ae8741abf7a9f7f0ff0d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1062,7 +1062,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &219442454
@@ -1089,7 +1089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219442454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.28, z: 0}
+  m_LocalPosition: {x: 0.87, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 343881328}
@@ -1244,7 +1244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &343881323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,22 +1254,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 343881322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 245df28a63006ed4db422f18264659e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 999343002}
-  animator: {fileID: 0}
+  animator: {fileID: 209577728}
   EnemyAttackPoint: {fileID: 219442455}
-  attackRange: 0.51
+  attackRange: 0.49
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 513
-  attackDamage: 2
+  attackDamage: 1
   deathEffect: {fileID: 0}
-  MaxHealth: 150
+  MaxHealth: 100
   target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
+  speed4: 500
+  nextwaypointDistance4: 2
   enemyGFX: {fileID: 209577727}
 --- !u!50 &343881324
 Rigidbody2D:
@@ -2757,7 +2757,7 @@ GameObject:
   - component: {fileID: 757136287}
   - component: {fileID: 757136286}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy5GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2834,7 +2834,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 939eef5058c3aa2499c5b75987d2a5be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2842,7 +2842,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &764760213
@@ -5118,7 +5118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1412559404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5134,17 +5134,17 @@ MonoBehaviour:
   healthBar: {fileID: 1478798920}
   animator: {fileID: 1157858218}
   EnemyAttackPoint: {fileID: 2003245615}
-  attackRange: 0.5
+  attackRange: 0.53
   PlayerLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 513
   attackDamage: 0
   deathEffect: {fileID: 0}
   MaxHealth: 100
-  target: {fileID: 0}
+  target: {fileID: 1837245422}
   speed6: 500
-  nextwaypointDistance6: 3
-  enemyGFX: {fileID: 0}
+  nextwaypointDistance6: 2
+  enemyGFX: {fileID: 1157858217}
 --- !u!50 &1412559405
 Rigidbody2D:
   serializedVersion: 4
@@ -5545,22 +5545,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445897419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 460127262ac7773448cfc41b3821ee6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1774956806}
-  animator: {fileID: 0}
+  animator: {fileID: 757136286}
   EnemyAttackPoint: {fileID: 894979650}
-  attackRange: 0.51
+  attackRange: 0.5
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 513
-  attackDamage: 2
+  attackDamage: 1
   deathEffect: {fileID: 0}
-  MaxHealth: 150
+  MaxHealth: 100
   target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
+  speed5: 500
+  nextwaypointDistance5: 2
   enemyGFX: {fileID: 757136285}
 --- !u!50 &1445897421
 Rigidbody2D:
@@ -7316,7 +7316,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7852,7 +7852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003245614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.28, z: 0}
+  m_LocalPosition: {x: 1.05, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1412559409}
