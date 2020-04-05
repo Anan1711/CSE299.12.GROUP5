@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI_9 : MonoBehaviour
+public class EnemyAI_7 : MonoBehaviour
 {
     public HealthBar healthBar;
     public Animator animator;
@@ -23,11 +23,11 @@ public class EnemyAI_9 : MonoBehaviour
     public Transform target;
 
     // This variable will control the speed
-    public float speed9 = 500f;
+    public float speed7 = 500f;
 
 
     // This variable is for how close an enemy needs to be to a waypoint before it moves to a target
-    public float nextwaypointDistance9 = 3f;
+    public float nextwaypointDistance7 = 3f;
 
 
     // Referencing our enemy character
@@ -35,25 +35,26 @@ public class EnemyAI_9 : MonoBehaviour
 
 
     // private variable. The path we are following
-    Path path9;
+    Path path7;
 
 
     // This variable will store the current waypoint of the path we are targeting
-    int currentWaypoint9 = 0;
+    int currentWaypoint7 = 0;
 
 
     // This variable is for knowing whether or not we reached the end of the path
-    bool reachedEndOfPath9 = false;
+    bool reachedEndOfPath7 = false;
 
 
     // This Seeker is responsible for generating a path to our target
-    Seeker seeker9;
+    Seeker seeker7;
 
 
     // To drive the movement of our enemy. Applying physics to our enenmy.
-    Rigidbody2D rb9;
+    Rigidbody2D rb7;
 
-   
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,11 +63,11 @@ public class EnemyAI_9 : MonoBehaviour
         healthBar.SetMaxHealth(MaxHealth);
 
         // Finding the seeker component on our object
-        seeker9 = GetComponent<Seeker>();
+        seeker7 = GetComponent<Seeker>();
 
 
         // Finding the rigidbody component on our object
-        rb9 = GetComponent<Rigidbody2D>();
+        rb7 = GetComponent<Rigidbody2D>();
 
 
         // generating our path at an interval
@@ -79,26 +80,26 @@ public class EnemyAI_9 : MonoBehaviour
     void UpdatePath()
     {
         // Checking if we are not calculation a path then we can start a new one
-        if (seeker9.IsDone())
+        if (seeker7.IsDone())
         {
             // Generating the path. StartPath takes the start position which is the emeny and an end position which is our target.
-            seeker9.StartPath(rb9.position, target.position, OnPathComplete);
+            seeker7.StartPath(rb7.position, target.position, OnPathComplete);
         }
 
 
     }
 
     // This function will run in the background. It will just calculate the path
-    void OnPathComplete(Path p9)
+    void OnPathComplete(Path p7)
     {
         // Making sure we didn't get any error
-        if (!p9.error)
+        if (!p7.error)
         {
             // Setting our courrent path to p which is the newly generated path
-            path9 = p9;
+            path7 = p7;
 
             // Resetting our progress along our path to start at the begining of our new path
-            currentWaypoint9 = 0;
+            currentWaypoint7 = 0;
         }
 
     }
@@ -108,7 +109,7 @@ public class EnemyAI_9 : MonoBehaviour
     void FixedUpdate()
     {
         // Checking if we have a path or not
-        if (path9 == null)
+        if (path7 == null)
         {
             return;
         }
@@ -116,11 +117,11 @@ public class EnemyAI_9 : MonoBehaviour
 
         // Checking if our current waypoint is eqaul or greater than the total amount of waypoints along our path
         // If it is true then we haved reached the end of the path
-        if (currentWaypoint9 >= path9.vectorPath.Count)
+        if (currentWaypoint7 >= path7.vectorPath.Count)
         {
-            reachedEndOfPath9 = true;
+            reachedEndOfPath7 = true;
 
-            if (reachedEndOfPath9 == true)
+            if (reachedEndOfPath7 == true)
             {
                 Attack();
             }
@@ -129,9 +130,9 @@ public class EnemyAI_9 : MonoBehaviour
         else
         {
             // There are more waypoint in the path. We haven't reached the end
-            reachedEndOfPath9 = false;
+            reachedEndOfPath7 = false;
 
-            if (reachedEndOfPath9 == false)
+            if (reachedEndOfPath7 == false)
             {
                 StopAttack();
             }
@@ -144,7 +145,7 @@ public class EnemyAI_9 : MonoBehaviour
           else
           {
               // There are more waypoint in the path. We haven't reached the end
-              reachedEndOfPath9 = false;
+              reachedEndOfPath7 = false;
           }
           */
 
@@ -154,44 +155,44 @@ public class EnemyAI_9 : MonoBehaviour
         // rb.position is our current position 
         // Gives us a vector from our position to our next waypoint
         // We are pointing and arrow from our current position to where we want to be which is our current waypoint and making sure the lenght of that arrow is 1 (normalized)
-        Vector2 direction9 = ((Vector2)path9.vectorPath[currentWaypoint9] - rb9.position).normalized;
+        Vector2 direction7 = ((Vector2)path7.vectorPath[currentWaypoint7] - rb7.position).normalized;
 
 
         // Getting a force we want to apply on our enemy to make it move in that direction.
         // Time.deltaTime is for making sure it doesn't vary depending on the frame rate
-        Vector2 force9 = direction9 * speed9 * Time.deltaTime;
+        Vector2 force7 = direction7 * speed7 * Time.deltaTime;
 
 
         // adding the force to our enemy
-        rb9.AddForce(force9);
+        rb7.AddForce(force7);
 
 
         // Finding the distance of our next waypoint. Which is between our current position and the next waypoint
-        float distance9 = Vector2.Distance(rb9.position, path9.vectorPath[currentWaypoint9]);
+        float distance7 = Vector2.Distance(rb7.position, path7.vectorPath[currentWaypoint7]);
 
 
         // Checking if we reached that current waypoint
-        if (distance9 < nextwaypointDistance9)
+        if (distance7 < nextwaypointDistance7)
         {
             // We want move to the next waypoint
-            currentWaypoint9++;
+            currentWaypoint7++;
         }
 
 
 
         // To flip our enemy towards the player
         // Checking if our current velocity of our enemy is less than some negative value means we are moving on the left 
-        if (rb9.velocity.x <= -0.01f)
+        if (rb7.velocity.x <= -0.01f)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         // if it is positve then we are moving to the right
-        else if (rb9.velocity.x >= 0.01f)
+        else if (rb7.velocity.x >= 0.01f)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(rb9.velocity.x));
+        animator.SetFloat("Speed", Mathf.Abs(rb7.velocity.x));
 
     }
     #region Enemy Hurt and Death
@@ -265,7 +266,7 @@ public class EnemyAI_9 : MonoBehaviour
     #region Enemy Attack
     void Attack()
     {
-        if (reachedEndOfPath9 == true)
+        if (reachedEndOfPath7 == true)
         {
             animator.SetBool("Attack", true);
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(EnemyAttackPoint.position, attackRange, PlayerLayers);
