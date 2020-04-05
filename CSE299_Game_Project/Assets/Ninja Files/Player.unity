@@ -153,7 +153,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 38835760}
   - component: {fileID: 38835761}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy8GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 21300000, guid: 962119ecc77c54f4d983de0a3312fc11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3cececd1c8cf7e42a2917e7215599a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +284,7 @@ Animator:
   m_GameObject: {fileID: 38835758}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4c76c13a8b09aa47a2d874169dda6a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: b7be04985dc7eb0468f319f933d68910, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -323,22 +323,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 53653576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 106e2f407fe01f243841ca105d5c4c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1543108274}
   animator: {fileID: 38835761}
   EnemyAttackPoint: {fileID: 938112240}
-  attackRange: 0.51
+  attackRange: 0.5
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 513
-  attackDamage: 2
+  attackDamage: 0
   deathEffect: {fileID: 0}
-  MaxHealth: 150
+  MaxHealth: 100
   target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
+  speed8: 500
+  nextwaypointDistance8: 3
   enemyGFX: {fileID: 38835759}
 --- !u!50 &53653578
 Rigidbody2D:
@@ -450,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.98, y: 0.03}
+  m_AnchoredPosition: {x: -5.66, y: 0.03}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &83060309
@@ -640,7 +640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111463062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.28, z: 0}
+  m_LocalPosition: {x: 1.04, y: -0.299, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 634133048}
@@ -715,7 +715,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1244,7 +1244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &343881323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1453,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1768,7 +1768,7 @@ GameObject:
   - component: {fileID: 530667305}
   - component: {fileID: 530667306}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy7GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,7 +1826,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 21300000, guid: 962119ecc77c54f4d983de0a3312fc11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0789cdf65492164d831b5aedf228b58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1847,7 +1847,7 @@ Animator:
   m_GameObject: {fileID: 530667303}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4c76c13a8b09aa47a2d874169dda6a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: e60fcf9a70736124c8afea1e447cb4a5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1936,7 +1936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: 0.0000042915}
+  m_AnchoredPosition: {x: -212, y: 0}
   m_SizeDelta: {x: 173.32007, y: 22.580002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543118259
@@ -2182,7 +2182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &632290405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,22 +2352,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 634133042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: ea9fdd91b083f5e49ae5fe7219669ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 785921715}
   animator: {fileID: 951899786}
   EnemyAttackPoint: {fileID: 111463063}
-  attackRange: 0.51
+  attackRange: 0.53
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 513
-  attackDamage: 2
+  attackDamage: 0
   deathEffect: {fileID: 0}
-  MaxHealth: 150
+  MaxHealth: 100
   target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
+  speed9: 500
+  nextwaypointDistance9: 3
   enemyGFX: {fileID: 951899784}
 --- !u!50 &634133044
 Rigidbody2D:
@@ -2479,7 +2479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.98, y: 0.03}
+  m_AnchoredPosition: {x: -5.23, y: 0.03}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &664444077
@@ -2605,7 +2605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &703905179
 Rigidbody2D:
   serializedVersion: 4
@@ -2716,7 +2716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.13, y: 0.03}
+  m_AnchoredPosition: {x: -18.84, y: 0.03}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703905184
@@ -3007,7 +3007,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c5e8aaaf8948b344b904a94b41e82b42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3015,7 +3015,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &774580521
@@ -3051,7 +3051,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3310,15 +3310,15 @@ GameObject:
   - component: {fileID: 855864416}
   - component: {fileID: 855864415}
   - component: {fileID: 855864414}
-  - component: {fileID: 855864413}
   - component: {fileID: 855864419}
+  - component: {fileID: 855864413}
   m_Layer: 11
   m_Name: Enemy_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &855864413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3465,7 +3465,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855864412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3660,7 +3660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938112239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.28, z: 0}
+  m_LocalPosition: {x: 1.084, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 53653582}
@@ -3751,7 +3751,7 @@ GameObject:
   - component: {fileID: 951899785}
   - component: {fileID: 951899786}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy9GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3809,7 +3809,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 21300000, guid: 962119ecc77c54f4d983de0a3312fc11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8097dab4f0961847b64a08d5dc8a1aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3830,7 +3830,7 @@ Animator:
   m_GameObject: {fileID: 951899783}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4c76c13a8b09aa47a2d874169dda6a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 157b85ed4dc04c14ca7cde4c308f6d3b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4388,7 +4388,7 @@ GameObject:
   - component: {fileID: 1157858219}
   - component: {fileID: 1157858218}
   m_Layer: 11
-  m_Name: Enemy2GFX
+  m_Name: Enemy6GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4465,7 +4465,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 33
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 146f8646b890e814ab78560ae9dddacc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4473,7 +4473,7 @@ SpriteRenderer:
   m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1190446404
@@ -5128,23 +5128,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412559403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: cd2a158fa2bd49c4a94dc92977861294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1478798920}
-  animator: {fileID: 0}
+  animator: {fileID: 1157858218}
   EnemyAttackPoint: {fileID: 2003245615}
-  attackRange: 0.51
+  attackRange: 0.5
   PlayerLayers:
     serializedVersion: 2
-    m_Bits: 513
-  attackDamage: 2
+    m_Bits: 0
+  attackDamage: 0
   deathEffect: {fileID: 0}
-  MaxHealth: 150
-  target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
-  enemyGFX: {fileID: 1157858217}
+  MaxHealth: 100
+  target: {fileID: 0}
+  speed6: 500
+  nextwaypointDistance6: 3
+  enemyGFX: {fileID: 0}
 --- !u!50 &1412559405
 Rigidbody2D:
   serializedVersion: 4
@@ -5535,7 +5535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1445897420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5868,22 +5868,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1495343340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fb83186f05795e4e9c4032553730fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: bd2c1c6ef6ea73b4abf88c1964f18109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 543118257}
   animator: {fileID: 530667306}
   EnemyAttackPoint: {fileID: 236789024}
-  attackRange: 0.51
+  attackRange: 0.5
   PlayerLayers:
     serializedVersion: 2
     m_Bits: 513
-  attackDamage: 2
+  attackDamage: 0
   deathEffect: {fileID: 0}
-  MaxHealth: 150
+  MaxHealth: 100
   target: {fileID: 1837245422}
-  speed2: 500
-  nextwaypointDistance2: 2
+  speed7: 500
+  nextwaypointDistance7: 2
   enemyGFX: {fileID: 530667304}
 --- !u!50 &1495343342
 Rigidbody2D:
@@ -7618,7 +7618,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1.4000015, y: -0.04399872}
   m_SizeDelta: {x: -4.36, y: -1.92}
   m_Pivot: {x: 0.5, y: 0.5}
