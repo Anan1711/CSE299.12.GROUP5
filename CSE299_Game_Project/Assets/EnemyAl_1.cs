@@ -251,12 +251,13 @@ public class EnemyAl_1 : MonoBehaviour
         this.enabled = false;
         Invoke("Delete", 10f);
         // Instantiate(deathEffect, transform.position, Quaternion.identity);
-        void Delete()
+    }
+    void Delete()
         {
             Destroy(gameObject);
         }
 
-    }
+   
     #endregion
 
     void Attack()

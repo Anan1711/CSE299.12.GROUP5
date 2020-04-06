@@ -249,12 +249,16 @@ public class EnemyAI_3 : MonoBehaviour
 
         GetComponent<BoxCollider2D>().enabled = false;
         this.enabled = false;
-
-        // Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-
-
+        Invoke("Delete", 5f);
     }
+    // Instantiate(deathEffect, transform.position, Quaternion.identity);
+    void Delete()
+    {
+        Destroy(gameObject);
+    }
+
+
+
     #endregion
 
     #region Enemy Attack

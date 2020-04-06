@@ -94,6 +94,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 // Debug.LogError("Something is wrong 2");
             }
+
             try
             {
                 enemy.GetComponent<EnemyAI_3>().TakeDamage(attackDamage);
@@ -103,6 +104,69 @@ public class PlayerCombat : MonoBehaviour
             {
                 // Debug.LogError("Something is wrong 3");
             }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_4>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 4");
+            }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_5>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 5");
+            }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_6>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 6");
+            }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_7>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 7");
+            }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_8>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 8");
+            }
+
+            try
+            {
+                enemy.GetComponent<EnemyAI_9>().TakeDamage(attackDamage);
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 9");
+            }
+
+         
+
         }
     }
     void OnDrawGizmosSelected()
