@@ -42,6 +42,17 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 	}
+
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Coins"))
+		{
+			//coin++;
+			Destroy(other.gameObject);
+		}
+	}
+
 	public void OnLanding() // public function
 	{
 		animator.SetBool("IsJumping", false);
@@ -58,4 +69,6 @@ public class PlayerMovement : MonoBehaviour
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump); //Time.fixedDeltaTime -- makes character speed consistent , elapsed timewhen it was last called
 		jump = false; // stop jumping
 	}
+
+	
 }

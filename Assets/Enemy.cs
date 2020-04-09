@@ -1,48 +1,79 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+using System.Collections;
+
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Animator animator;
-    public int maxHealth = 100;
-    int currentHealth;
+    [System.Serializable]
+    public class EnemyStats
+    {
+        public int maxHealth = 100;
+        //public float startPctHealth = 1f;
 
-    // Start is called before the first frame update
+        private int _curHealth;
+        public int curHealth
+        {
+            get { return _curHealth; }
+            set { _curHealth = Mathf.Clamp(value, 0, maxHealth); }
+        }
+
+        public int damage = 40;
+
+        
+
+        public void Init()
+        {
+            curHealth = maxHealth;
+        }
+
+
+    }
+
+    public EnemyStats stats = new EnemyStats();
+
+
+    [Header("Optional: ")]
+    [SerializeField]
+    private StatusIndicator statusIndicator;
+
     void Start()
     {
-        currentHealth = maxHealth;
+        stats.Init();
+
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        }
+        
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        //play hurt animation
-        animator.SetTrigger("Hurt");
-
-        //animator.SetTrigger("Hurt");
-
-        if (currentHealth <= 0)
+        stats.curHealth -= damage;
+        if (stats.curHealth <= 0)
         {
-            Die();
+            Destroy(gameObject);
+
+        }
+
+
+        if (statusIndicator != null)
+        {
+            statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
+        }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D _colInfo)
+    {
+        Player _player = _colInfo.collider.GetComponent<Player>();
+        if (_player != null)
+        {
+            _player.DamagePlayer(stats.damage);
+            //TakeDamage(999999); 
         }
     }
-
-    void Die()
-    {
-        Debug.Log("Enemy died");
-
-        animator.SetBool("IsDead", true);
-
-        GetComponent<Collider2D>().enabled = false;
-
-        this.enabled = false;
-
-        
-    }
-
-
 }
 
 
