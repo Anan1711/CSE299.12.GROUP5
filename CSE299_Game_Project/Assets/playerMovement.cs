@@ -21,6 +21,8 @@ public class playerMovement : MonoBehaviour
     bool Jump = false;
     bool crouch = false;
 
+    public GameObject Player;
+
     void Start()
     {
         currentHealth = MaxHealth;
@@ -130,8 +132,13 @@ public class playerMovement : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-       
+        
+
     }
 
-   
+
+
+    
+
+
 }

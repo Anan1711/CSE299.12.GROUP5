@@ -9,6 +9,7 @@ TagManager:
   - flyingCoin
   - groundCoin
   - saw
+  - platform
   layers:
   - Default
   - TransparentFX
