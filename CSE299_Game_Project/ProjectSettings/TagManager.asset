@@ -9,6 +9,10 @@ TagManager:
   - flyingCoin
   - groundCoin
   - saw
+  - HealthBar
+  - platform
+  - platform
+  - platform
   - platform
   layers:
   - Default
