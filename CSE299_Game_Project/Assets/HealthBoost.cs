@@ -11,8 +11,15 @@ public class HealthBoost : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
-        healthbar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-    }
+        try
+        {
+            healthbar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        }
+        catch
+        {
+
+        }
+    }     
     void OnTriggerEnter2D(Collider2D col)
     {
         if(player.currentHealth < player.MaxHealth)
