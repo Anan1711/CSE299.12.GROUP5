@@ -8,6 +8,8 @@ TagManager:
   - Coins
   - Cloud
   - Platform
+  - Fire
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - Player
   - Obstacle
   - Enemies
-  - 
-  - 
+  - Heal
+  - Coins
   - 
   - 
   - 

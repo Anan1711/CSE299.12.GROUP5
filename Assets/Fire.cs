@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Fire : MonoBehaviour
 {
     [System.Serializable]
     public class EnemyStats

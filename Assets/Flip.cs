@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy3GFX : MonoBehaviour
+public class Flip : MonoBehaviour
 {
 
 	public Transform player;

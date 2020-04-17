@@ -3,7 +3,7 @@
 public class GameMaster : MonoBehaviour
 {
   
-    public static void KillPlayer(Player player)
+    public static void KillPlayer(PlayerHealth player)
     {
         Destroy(player.gameObject);
     }
