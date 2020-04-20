@@ -35,6 +35,11 @@ public class FireBallMovement : MonoBehaviour
         {
             enemy3.TakeDamage(FireBallDamage);
         }
+        BossHealth boss = hitInfo.GetComponent<BossHealth>();
+        if (boss != null)
+        {
+            boss.TakeDamage(FireBallDamage);
+        }
 
         Instantiate(impactEffect, transform.position, transform.rotation);
 

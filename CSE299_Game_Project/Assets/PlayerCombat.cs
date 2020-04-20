@@ -122,7 +122,23 @@ public class PlayerCombat : MonoBehaviour
             {
                // Debug.LogError("Something is wrong 3");
             }
-            
+            try
+            {
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
+                }
+                else if (Input.GetButtonDown("Fire2"))
+                {
+                    enemy.GetComponent<BossHealth>().TakeDamage(BigDamage);
+                }
+
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong 3");
+            }
+
 
         }
         
