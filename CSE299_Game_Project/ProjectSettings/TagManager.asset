@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Coins
   layers:
   - Default
   - TransparentFX
@@ -30,14 +31,14 @@ TagManager:
   - 
   - 
   - 
+  - forenemies
+  - 
+  - midground
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - lights
   m_SortingLayers:
   - name: background
     uniqueID: 4130121825
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: forelayer
     uniqueID: 2579494071
+    locked: 0
+  - name: Ground
+    uniqueID: 2526263117
     locked: 0

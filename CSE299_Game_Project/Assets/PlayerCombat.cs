@@ -164,8 +164,18 @@ public class PlayerCombat : MonoBehaviour
             {
                 // Debug.LogError("Something is wrong 9");
             }
+            try
+            {
+                enemy.GetComponent<BossHealth>().TakeDamage(attackDamage);
 
-         
+            }
+            catch
+            {
+                // Debug.LogError("Something is wrong boss
+               
+            }
+
+          
 
         }
     }

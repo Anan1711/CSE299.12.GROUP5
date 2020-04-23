@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-
+    public GameObject Player;
 
     void Start()
     {
@@ -95,6 +95,19 @@ public class PlayerMovement : MonoBehaviour
         this.enabled = false;
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.CompareTag("Coins"))
+        {
+
+            Destroy(other.gameObject);
+        }
+
+
+    }
+
 }
 
 
