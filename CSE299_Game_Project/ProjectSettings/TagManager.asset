@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Coins
+  - HealthBar
   layers:
   - Default
   - TransparentFX
