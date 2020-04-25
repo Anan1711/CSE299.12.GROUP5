@@ -16,25 +16,25 @@ TagManager:
   - UI
   - 
   - 
-  - Test Layer
+  - Player
   - PlayerMovement
   - obstacle
   - Enemies
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Platform
+  - Falling
+  - midground
   - 
   - forenemies
   - 
-  - midground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

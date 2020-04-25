@@ -51,7 +51,7 @@ public class PlatformMovement : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			other.gameObject.layer = 13;
+			other.gameObject.layer = 8;
 			other.transform.SetParent(childTransform);
 		}
 	}
