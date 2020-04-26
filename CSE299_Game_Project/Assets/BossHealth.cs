@@ -5,8 +5,10 @@ using UnityEngine;
 public class BossHealth : MonoBehaviour
 {
     public int health = 500;
+	//health bar
+	public HealthBar healthBar;
 
-    public GameObject deathEffect;
+	public GameObject deathEffect;
 
     public bool isInvulnerable = false;
 
