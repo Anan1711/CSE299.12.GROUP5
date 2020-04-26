@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6240055996591543701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.805, y: 3.405, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallSpeed: 15
-  FireBallDamage: 20
+  FireBallDamage: 4
   rb: {fileID: 9003706443358318863}
   ImpactEffect: {fileID: 3768618786843135686, guid: bfd2adad6faa6224f8b859c79c798cfb,
     type: 3}

@@ -248,8 +248,9 @@ public class EnemyAl_1 : MonoBehaviour
         // Disable the enemy
 
         GetComponent<BoxCollider2D>().enabled = false;
+       // GetComponent<CircleCollider2D>().enabled = false;
         this.enabled = false;
-        Invoke("Delete", 10f);
+        Invoke("Delete", 3f);
         // Instantiate(deathEffect, transform.position, Quaternion.identity);
     }
     void Delete()
