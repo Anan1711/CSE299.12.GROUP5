@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Baal : MonoBehaviour
+public class PHeal : MonoBehaviour
 {
     PPlayerHealth playerhealth;
 
-    public int healthbonus = 10;
+    public int healthbonus = 20;
 
     void Awake()
     {

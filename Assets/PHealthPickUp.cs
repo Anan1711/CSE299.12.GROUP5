@@ -1,16 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Baal : MonoBehaviour
+
+public class PHealthPickUp : MonoBehaviour
 {
     PPlayerHealth playerhealth;
 
+    public PHealthBar healthbar;
+    
     public int healthbonus = 10;
 
     void Awake()
     {
         playerhealth = FindObjectOfType<PPlayerHealth>();
+        try
+        {
+            healthbar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<PHealthBar>();
+        }
+        catch
+        {
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -19,6 +28,10 @@ public class Baal : MonoBehaviour
         {
             Destroy(gameObject);
             playerhealth.currentHealth = playerhealth.currentHealth + healthbonus;
+            healthbar.SetHealth(playerhealth.currentHealth);
+
         }
+
+
     }
 }
