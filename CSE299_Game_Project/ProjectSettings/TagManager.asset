@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Coin
+  - flyingCoin
+  - groundCoin
+  - saw
+  - HealthBar
+  - platform
+  - platform
+  - platform
+  - platform
   layers:
   - Default
   - TransparentFX
@@ -13,13 +23,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Knight
+  - Obstacle
+  - Enemy
+  - Enemy2
+  - Enemy3
+  - Platform
+  - Falling
   - 
   - 
   - 
@@ -38,6 +48,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 857028977
+    locked: 0
+  - name: Ground
+    uniqueID: 2400868575
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
