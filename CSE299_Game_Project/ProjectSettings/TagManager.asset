@@ -14,6 +14,9 @@ TagManager:
   - platform
   - platform
   - platform
+  - Coins
+  - Platform
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -56,4 +59,13 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 3401213325
+    locked: 0
+  - name: New Layer1
+    uniqueID: 2630735213
+    locked: 0
+  - name: Leaf
+    uniqueID: 2645804443
     locked: 0
